@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Phone</title>
+</head>
+<body>
+<a href="/create-phone">Create new phone</a>
+<h1>PhoneNames</h1>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <th:block th:each="phone: ${phones}">
+        <tr>
+            <td th:text="${phone.name}"></td>
+            <td><a th:href="@{/edit-phone/__${phone.id}__ }">Edit</a></td>
+            <td><a th:href="@{/delete-phone/__${phone.id}__ }">Delete</a></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>
