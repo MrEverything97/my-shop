@@ -20,8 +20,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Page<Product> findAllByModelContaining(String model, Pageable pageable) {
-        return productRepository.findAllByModelContaining(model, pageable);
+    public Page<Product> findAllByModelContainingIgnoreCase(String model, Pageable pageable) {
+        return productRepository.findAllByModelContainingIgnoreCase(model, pageable);
     }
 
 

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public interface ProductService {
     Page<Product> findAll(Pageable pageable);
 
-    Page<Product> findAllByModelContaining(String model, Pageable pageable);
+    Page<Product> findAllByModelContainingIgnoreCase(String model, Pageable pageable);
 
     Product findById(Long id);
 

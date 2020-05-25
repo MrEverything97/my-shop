@@ -28,7 +28,7 @@ public class ProductController {
     public ModelAndView listProducts(@PageableDefault(size = 3) Pageable pageable, @RequestParam("s") Optional<String> s ){
         Page<Product> products;
         if(s.isPresent()){
-            products = productService.findAllByModelContaining(s.get(), pageable);
+            products = productService.findAllByModelContainingIgnoreCase(s.get(), pageable);
         } else {
             products = productService.findAll(pageable);
         }
